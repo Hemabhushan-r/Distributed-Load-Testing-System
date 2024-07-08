@@ -12,6 +12,7 @@ import (
 
 func CreateConfig(writer http.ResponseWriter, request *http.Request) {
 	var config models.TestConfig
+	writer.Header().Set("Content-Type", "application/json")
 
 	if err := json.NewDecoder(request.Body).Decode(&config); err != nil {
 		http.Error(writer, err.Error(), http.StatusBadRequest)
@@ -22,13 +23,16 @@ func CreateConfig(writer http.ResponseWriter, request *http.Request) {
 		http.Error(writer, err.Error(), http.StatusBadRequest)
 		return
 	}
-
-	if err := storage.SaveConfig(config); err != nil {
+	last_inserted_id, err := storage.SaveConfig(config)
+	if err != nil {
 		http.Error(writer, err.Error(), http.StatusInternalServerError)
 		return
 	}
-
-	writer.WriteHeader(http.StatusCreated)
+	response := map[string]interface{}{
+		"test_id": last_inserted_id,
+	}
+	response_data, _ := json.Marshal(response)
+	writer.Write(response_data)
 }
 
 func GetConfig(writer http.ResponseWriter, request *http.Request) {
