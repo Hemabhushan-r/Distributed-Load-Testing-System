@@ -1,0 +1,14 @@
+
+services:
+  dlts:
+    image: my-go-app:latest
+    volumes:
+      - ../:/app
+    working_dir: /app
+    ports:
+      - "8082"
+    environment:
+      - POSTGRES_HOST=host.docker.internal
+      - POSTGRES_PORT=5432
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

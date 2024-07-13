@@ -1,0 +1,32 @@
+{
+  "client": {
+    "EndpointID": "8546904bfbc396c2673c0cf5ccd173d6c3a6e2e770085e88b87bf34002097b4d",
+    "IPv4Address": "",
+    "IPv6Address": "",
+    "MacAddress": "",
+    "Name": "config-dlts-2"
+  },
+  "containers": [
+    {
+      "EndpointID": "a164afbfa5463a1d4e7ec2531e4c03fca18883ff1f168f3727c298a2bfaa56c9",
+      "IPv4Address": "",
+      "IPv6Address": "",
+      "MacAddress": "",
+      "Name": "config-dlts-3"
+    },
+    {
+      "EndpointID": "f4713bef9c08f3e23f1f56c1102daa82a16f70480a7748f8922d78836a715d76",
+      "IPv4Address": "",
+      "IPv6Address": "",
+      "MacAddress": "",
+      "Name": "config-dlts-4"
+    }
+  ],
+  "namenode": {
+    "EndpointID": "32d96c1ea44113085ec620345525a93aa2d0b6d475b3e45ec76fb8bc74824846",
+    "IPv4Address": "",
+    "IPv6Address": "",
+    "MacAddress": "",
+    "Name": "config-dlts-1"
+  }
+}
