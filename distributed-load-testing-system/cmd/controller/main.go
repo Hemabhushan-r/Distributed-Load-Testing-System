@@ -19,6 +19,8 @@ const (
 	dbname   = "dlts"
 )
 
+//To connect in Linux terminal sudo -u postgres psql
+
 var psqlInfo string = fmt.Sprintf("host=%s port=%d user=%s "+
 	"password=%s dbname=%s sslmode=disable",
 	host, port, user, password, dbname)
